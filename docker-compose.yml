@@ -7,14 +7,8 @@ services:
     ports:
       - 8080:2368
     environment:
-      # see https://ghost.org/docs/config/#configuration-options
-        database__client: sqlite3
-        database__connection__filename: "content/data/ghost-test.db"
-#       database__client: mysql
-#       database__connection__host: ${DATABASE_HOST}
-#       database__connection__user: ${DATABASE_USER}
-#       database__connection__password: ${DATABASE_PASSWORD}
-#       database__connection__database: ${DATABASE_NAME}
+      database__client: sqlite3
+      database__connection__filename: "content/data/ghost-test.db"
       url: http://localhost:8080
     volumes:
       - ./.docker-data/minima:/var/lib/ghost/content
