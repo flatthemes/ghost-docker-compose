@@ -18,4 +18,4 @@ services:
       mail__options__auth__pass: ${MAIL_PASSWORD}
 
     volumes:
-      - ./.docker-data/${PROJECT_DIR}:/var/lib/ghost/content
+      - /docker-data/${PROJECT_DIR}:/var/lib/ghost/content
