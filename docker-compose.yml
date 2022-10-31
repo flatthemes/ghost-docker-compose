@@ -7,13 +7,8 @@ services:
     ports:
       - 8080:2368
     environment:
-#       database__client: sqlite3
-#       database__connection__filename: "content/data/ghost-test.db"
-      database__client: mysql
-      database__connection__host: ${DATABASE_HOST}
-      database__connection__user: ${DATABASE_USER}
-      database__connection__password: ${DATABASE_PASSWORD}
-      database__connection__database: ${DATABASE_NAME}
+      database__client: sqlite3
+      database__connection__filename: "content/data/ghost-test.db"
       url: ${URL}
       mail__transport: "SMTP"
       mail__options__from: ${MAIL_FROM}
@@ -23,4 +18,7 @@ services:
       mail__options__auth__pass: ${MAIL_PASSWORD}
 
     volumes:
-      - /docker-data/${PROJECT_DIR}:/var/lib/ghost/content
+      - ghost-data:/var/lib/ghost/content
+volumes:
+  ghost-data:
+    driver: local
