@@ -18,4 +18,4 @@ services:
       mail__options__auth__pass: ${MAIL_PASSWORD}
 
     volumes:
-      - demo-ghost:/var/lib/ghost/content
+      - demo-ghost-volume:/var/lib/ghost/content
